@@ -1,57 +1,79 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:600");
 *
 {
-   font-family: "Poppins";
-    font-size: 2;
-    letter-spacing: 4px;
-    box-sizing: border-box;
+font-family: "Poppins";
+font-size: 2;
+letter-spacing: 4px;
+box-sizing: border-box;
 }
+
+h1
+{ 
+color:ghostwhite;
+text-align:center;
+border-style: solid
+}
+
 
 body
 {
-    background: linear-gradient(#FF3CAC, #784BA0, #2B86C5);
-    height: 300vh;
+  /* baggrundsfarve */
+background: linear-gradient(#FF3CAC, #784BA0, #2B86C5);
+height: 300vh;
 }
 
-.topnav{overflow: hidden;
-    background-color: darkorchid;}
-.topnav a {float: left;
-display: block;
-    color: aliceblue;
-    text-decoration: none;
-    Padding: 10px;
-}
 
-.stopnav a:hover;
+/* om topbar */
 
+.topnav
 {
-    background-color: black
+overflow: hidden;
+background-color: darkorchid;
+}
+
+.topnav a 
+{
+float: left;
+display: block;
+color: aliceblue;
+text-decoration: none;
+Padding: 10px;
+}
+
+/* hoverfunktion*/
+
+.topnav a:hover,.topnav a.active
+{
+background-color: #452159;
 }
 
 #overskrift2
 {
-    font-size:45px; font-family: monospace;
+font-size:45px; font-family: monospace;
 }
 
 #knap
 {
-    text-transform: uppercase;  
-    border-radius: 40px;
-    background: #fff;
-    color:black;
-    font-size: 20px;
-    padding: 8px 30px;
-    text-decoration: none;
+ text-transform: uppercase;  
+border-radius: 40px;
+background: #fff;
+color:black;
+font-size: 20px;
+padding: 8px 30px;
+text-decoration: none;
 }
-.column.side{
+
+.column.side
+{
 width:50%;
 }
-#binaerboksen{
+
+#binaerboksen
+{
 background: lightblue;
 border-radius: 50px;
 padding: 20px;
 margin-bottom: 10px;
 margin-left: 900px;
 transform: translateY(-150px)
-
 }
