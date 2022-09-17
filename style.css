@@ -3,9 +3,12 @@
 {
 font-family: "Poppins";
 font-size: 2;
-letter-spacing: 4px;
+letter-spacing: 2px;
 box-sizing: border-box;
 }
+
+
+/* design af den hvide topboks*/
 
 h1
 { 
@@ -19,7 +22,7 @@ body
 {
   /* baggrundsfarve */
 background: linear-gradient(#FF3CAC, #784BA0, #2B86C5);
-height: 300vh;
+height: 700vh;
 }
 
 
@@ -27,8 +30,8 @@ height: 300vh;
 
 .topnav
 {
-overflow: hidden;
-background-color: darkorchid;
+overflow: auto;
+background-color:blueviolet;
 }
 
 .topnav a 
@@ -37,7 +40,7 @@ float: left;
 display: block;
 color: aliceblue;
 text-decoration: none;
-Padding: 10px;
+Padding: 15px;
 }
 
 /* hoverfunktion*/
@@ -54,7 +57,7 @@ font-size:45px; font-family: monospace;
 
 #knap
 {
- text-transform: uppercase;  
+text-transform: uppercase;  
 border-radius: 40px;
 background: #fff;
 color:black;
