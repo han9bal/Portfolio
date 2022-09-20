@@ -7,6 +7,11 @@ letter-spacing: 2px;
 box-sizing: border-box;
 }
 
+p
+{
+color:white;
+text-decoration: none;
+}
 
 /* design af den hvide topboks*/
 
@@ -14,14 +19,14 @@ h1
 { 
 color:ghostwhite;
 text-align:center;
-border-style: solid
+backgroun
 }
 
 
 body
 {
   /* baggrundsfarve */
-background: linear-gradient(#FF3CAC, #784BA0, #2B86C5);
+background: linear-gradient(#784BA0, #2B86C5);
 height: 700vh;
 }
 
