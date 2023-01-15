@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Astropi</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+</head>
+
+<body>
+     
+<h1>
+Informatik c portfolio
+</h1>
+        
+        <div class="topnav">
+        <a href="index.html"> Portfolio </a>
+        <a href="webteknologi.html"> Webteknologi </a>
+        <a href="itsikkerhed.html"> It-sikkerhed </a>
+        <a href="Astropi.html" class="active"> Astropi</a>
+        <a href="Machine%20Learning.html"> Machine Learning</a>  
+        </div>
+
+<h2 id=overskrift2>
+    Astropi forløb Blåbåd
+</h2>
+
+<p> På denne side vil der være information om hvad vi har gennemgået i astropi forløbet og uddrag af kode fra vores endelige projekt</p>
+<center><img src="astro_pi_opengraph-c2e17dc9e256ecd0b13ae02bcb6cb666a0b4342a49a68d5e6df184fbbd9a0e8f3ff4aa32a97d9a7696bb90af66bb96fcd16969988f512b484a4e6ebb77cf7157.png" alt="centered image"> </center>
+
+<h2>Projektbeskrivelse</h2>
+ <p>I vores projektbeskrivelse beskrev vi hvilket videnskabeligt spørgsmål, som vi godt ville have svar på. Det gjorde vi ud fra 2 hovedspørgsmål</p>
+
+<h2>Describe your team’s experiment and what they plan to investigate.</h2>
+    
+<p>
+Our team plans on investigating the albedo of major cities compared to one another. Our experiment could inspire suggestions on how you could increase the albedo effect of major cities, which would ultimately lower their temperature. The comparison would rely on how the different cities are constructed and arranged.
+</p>
+    
+<h2>What type of data does your team plan to gather?</h2>
+
+<p>We plan to extract the albedo from all the major cities, to figure out which cities reflect the most light. We will then compare the albedo to the average temperature of the cities. We will also take into account the different climate zones around earth, in which the cities are located. If possible, we could also investigate how the albedo effect differs between the citycenters and their suburbs. We plan to calculate the albedo by adding up the different red, green and blue colours in each pixel in our pictures. If the picture has a maximum colour value of all the colours, the maximum value per pixel would be 765, and if less light is reflected the value of the pixel would be lower. Our data would be pictures that have been specifically coded to certain coordinates of the major cities. Cities that are visible from the 3 hour orbit. If possible we would like to investigate major cities such as: Copenhagen, Tokyo, New York, Shanghai, Beijing, Toronto, Amsterdam, Chicago, Mexico City, New Delhi, Oslo, Stockholm, Osaka, Kyoto, Nairobi, Laos, Cairo, Capetown and many more. </p>
+
+<h2>ESAs specifikationer</h2>
+    
+<p> ESA har nogle specifikationer, som satte nogle rammer for vores projekt. Vi vil gennemgå de vigtigste rammer på denne side</p>
+    
+<h2> Phase 1 experiment checklist</h2>
+    
+<p> Det var et krav for eksperimentet at det ikke måtte afhænge af astronauternes arbejdsgang <br> "Must be able to run independently, it cannot rely on astronaut interaction with the Astro Pi computer. We can’t be sure when an astronaut will be available, and they have a busy work schedule."<br> Dette løste vi ved at indføre en afstandstrigger der ligesom udløste kameraet når noget, som ikke havde noget med astronauternes arbejdsgang at gøre.</p>
+    
+<p> Et andet krav for eksperimentet var, at det ikke måtte være afhængigt af at køre på et bestemt tidspunkt af dagen eller en bestemt dato. <br> "Should not rely on running on a specific date or time of day. We cannot predict accurately when each experiment will run." <br>
+Dette krav var lidt mere problematisk at forholde hos til, da vi ikke ville kunne bruge data indsamlet fra de områder på jorden, hvor det var nat. Som det er nu, vil kameraet alt andet lige også optage mens det er dag, men kravet gør det nødvendigt for os at forholde hos til et tredje krav, nemlig hvor meget data vi kan indsamle.    
+</p>
+    
+<p> Et tredje krav for eksperimentet var at det ikke måtte indsamle mere end 3GB data.<br>"Should not need more than 3GB of data for your results." <br> hvilket kunne blive en udfordring da vi henter videodata, som i løbet af 3 timer hurtig kan fylde 3 GB. For at overkomme dette kunne vi eventuelt indfører sleepfunktioner, der gør så kameraet ikke optager når ISS passerer dele af jordkloden hvor det er nat.</p>
+    
+ <p>Et fjerde krav, som nok er det der udfordrer vores kode mest, er kravet om at koden ikke må afhænge af at ISS passerer et særligt sted på jorden. <br> "Should not rely on the ISS passing over a specific feature on Earth that is unlikely to occur in the three hour period in which your experiment would run."<br> Et af målene ved vores eksperiment var at kunne analysere albedo data for større byer og, hvis ISS ikke passerer nogle, vil der ikke rigtig komme noget værdifuldt data ud af eksperimentet. Vi har dog valgt at antage at ISS i løbet af de 3 timer, hvor ISS når 2 gange rundt om jorden, vil passere i hvert fald 2 større byer, som vi så ville hente billeder eller videodata fra. En måde at imødekomme denne problemstilling, kunne bestå i form af lidt grundiger forarbejder, så vi fik et overblik over hvilke områder på jorden ISS passerer og altså hvilke byer den nok også ville passerer.
+</p>
+
+<h2> Phase 2 experiment checklist</h2>
+
+<p> Det eneste kriterie, som vi fandt særlig relevant for vores projekt under fase 2 checklist, var at programmet skulle stoppe efter 3 timer. "Your program monitors its running time and stops after three hours have elapsed." Dette kunne vi have tacklet ved at køre en form for tidsfunktion over vores loop og så et "break" efter de 3 timer, eller andet så eksperimentet ville stoppe af sig selv.</p>
+
+<h2> Beskrivelse af hvilken sensor vi bruger</h2>
+
+<p> Vi bruger kameraet som sensor, da den bliver brugt til observere en by i de fem sekundter der skal filmes. Det vi planlagde var at udregne en farve eller albedo værdi af hver pixel i billede/videodataen ved brug af numphy funktionen, så vi kunne få et overblik af albedo værdien af de forskellige byer som ISS passere.</p>
+
+
+<h2>grundig beskrivelse af testmåling af mindst en sensor, samt Gennemgang af relevante kodestumper.</h2>     
+
+<p> Følgende kode er bestemmende for testmålingen med kameraet som sensor</p>
+    
+<center><img src="kamerakode.png"></center>  
+    
+<p> Først defineres variablerne "dy" og "dx" for distance y og distance x. "dy" er longitude eller længdegrad og "dx" er latitude eller breddegrad. De to variable sættes lig differencen mellem ISS's og den nærmeste by's længde- og breddegrader. Subtraktion er omsluttet af en "abs" kommando, der sørger for at afstanden kommer ud i absolutte tal således at fortegn ikke er afgørende. <br> Herefter printes de to værdier for overblik.<br> Herefter indledes en "if-funktion" med bentingelsen værende at værdien af dy+dx er mindre end 2, men har en værdi på over 0. Grunden til at vi har valgt tallet 2 er at det ca. svarer til en distance på 10km når man regner i længde- og breddegrader.<br>
+    
+Hvis summen af dy og dx er mellem 2 og 0, begynder if-statementet og kameraet starter og tillader at se hvad der skal filmes med kommandoen "camera.start_preview". Herefter begynder filmningen med kommandoen camera.start_recording. Det der står i den efterfølgende parantes angiver hvorhenne videodataen skal lagres. Herefter kommer kommandon "sleep 5" som angiver at sensoren ikke skal foretage sig noget andet i de fem sekundter.<br> Herefter indtræder kommandoen "camera.stop_recording" som stopper optagelsen, til sidst står "camera.stop_preview" som slukker kameraet.
+    </p> 
+    
+<center><img src="indledendekode.png"></center>  
+    
+<br>
+    
+ <p> I starten af koden hentes elementer fra forskellige "biblioteker". Hvorefter camera defineres til Picamera, efterfulgt af et uendeligt loop, som indledes med kommandoen "while true". I loopet sættes variablen coordinates lig med ISS's koordinater.<br>Så definere vi en ny variabel som heder "coordinate_pair" som konvertere ISS koordinater til et fromat som kan bruges med "reverse_geocoder". I slutningen sættes "location" så lig med den by som reversegeocorder funktionen finder, der ligger tættest på ISS. Til slut printes denne by med funktionen print location.
+ </p> 
+    
+    
+<h2> Fil med programkode. </h2>  
+    
+    <center><a class="knap" href="bl%C3%A5b%C3%A5d%20(4).py"><button>Programkode</button></a></center>  
+    
+<h2> Vurdering af om vores kode lever op til ESAs kravspecifikationer</h2>
+    
+    <p> Som udgangspunkt vurderer vi at koden i rimelig grad lever op til ESA's kravspecifikationer. Den fungerer indnfor rammerne, men det er klart at hvis projektet skulle føres helt i mål, er der nogle uomgåelige omstændigheder. som vi er nødt til at tage i betragtning. Vi skulle fx indfører en form for kommando eller lignende der gør så programmet stopper efter de 3 timer. Vi ville også skulle danne os et overblik over omfanget af kravene med at der ikke må hentes mere end 3GB data, samt at eksperimentet ikke må afhænge af om ISS passerer noget særligt på jorden, da det stadig er lidt uklart for os hvor meget videodata eksperimentet egentlig vil hente og hvor tit kameraet vil køre. Så har vi også nogle udfordringer i og med at vi helst ikke vil indsamle videodata om natten og at projektet dermed er afhængig af tidspunktet på døgnet. Alt dette kan vi arbejde med, men som udgangspunkt vurderer vi altså at projektet ligger inde for ESA's rammer. </p>
+    
+    
+<h2> Flowchart</h2>  
+<p> Vi har udarbejdet en simpel flowchart af den kode vi har nu. Man kunne eventuelt have bygget videre på flowcharten så den også ville inkludere udregningen af billededataene, som vi planlagde</p>
+<center><img src="Flowchart.png"></center>
