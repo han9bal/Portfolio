@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:600");
+*
+{
+font-family: "Poppins";
+font-size: 2;
+letter-spacing: 1px;
+box-sizing: border-box;
+}
+
+p
+{
+color:white;
+text-decoration: none;
+font-size: 15px;
+}
+
+h1
+{ 
+color:ghostwhite;
+text-align:center;
+}
+
+h2
+{ 
+color:ghostwhite;
+text-align:center;
+}
+
+
+body
+{
+background: linear-gradient(#784BA0, #2B86C5);
+}
+
+
+/* om topbar */
+
+.topnav
+{
+overflow: auto;
+background-color:blueviolet;
+position:sticky;
+top:0;
+z-index: 19;
+}
+
+.topnav a 
+{
+float: left;
+display: block;
+color: aliceblue;
+text-decoration: none;
+Padding: 15px;
+position:sticky;
+top:0;
+transition-duration: 1s;
+}
+
+/* hoverfunktion*/
+
+.topnav a:hover,.topnav a.active
+{
+background-color: #452159;
+}
+
+.overskrift2
+{
+font-size:45px; font-family: monospace;
+}
+
+.knap
+{
+text-transform: uppercase;  
+border-radius: 40px;
+background: #fff;
+color:black;
+font-size: 20px;
+padding: 8px 30px;
+text-decoration: none;
+text-align: center;
+}
+
+.column.side
+{
+width:50%;
+}
+
+#binaerboksen
+{
+background: lightblue;
+border-radius: 20px;
+padding: 30px;
+margin-bottom: 20px;
+margin-left: 900px;
+transform: translateY(-350px)
+}
+
+.modulus{
+    width: 80%;
+}
+
+#Flowchart{
+    align-content: center;
+}

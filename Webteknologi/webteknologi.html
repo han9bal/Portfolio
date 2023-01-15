@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Webteknologier</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+</head>
+
+<body>
+    
+<h1>
+Informatik c portfolio
+</h1>
+        
+        <div class="topnav">
+        <a href="index.html"> Portfolio </a>
+        <a href="webteknologi.html" class="active"> Webteknologi </a>
+        <a href="itsikkerhed.html"> It-sikkerhed </a>
+        <a href="Astropi.html"> Astropi</a>
+        <a href="Machine%20Learning.html"> Machine Learning</a>
+        </div>
+
+<h2 id=overskrift2>
+    Webteknologier
+</h2>
+
+<div class="column side"> 
+<p> på denne side vil der være dokumentation og eksempler af kode brugt i forløbet om webteknologier</p>
+</div>    
+    
+<p>Den simpleste måde at opsætte en html hjemmeside er ved følgende kode</p> 
+<img src="Simp.png">
+
+<p> 
+doctype kommandoen fortæller browseren, hvilket dokumenttype der er tale om.
+Herefter kommer html kommandoen som skal omslutte alt der skrives i html før at dokumentet kan læses.
+Det der så står inde for "head" kommandoen bliver ikke vist på siden, men er til for at browseren kan læse vigtig information fx indenfor styling i css.
+Dette vises her i nedenstående billede, som er et screenshot af den øverste del af koden til denne underside, hvor der indenfor head kommandoen er skrevet "link rel="stylesheet" type="text/css" href="style.css", som henviser til at stylingen af siden, foretages i en css fil.
+Kommandoen "meta charset="UTF-8" ligger også mellem head-kommandoen og er til for at browseren kan læse bogstaver som æ,ø og å.
+"Body" kommandoen som omslutter Hello world i ovenstående billede, fortæller browseren hvad der skal vises på selve hjemmesiden. Den skal omslutte tekst, billeder osv, som ligesom skal udgøre "kroppen" af siden.
+</p>
+<img src="Simpel.png">
+<p> 
+
+<h1>Billeder</h1>
+<p>
+Billeder indsættes vha. af at skrive "img src=valgt billede her"
+I nedenstående billede ses et screenshot af kommandoen for et af de øvrige billeder brugt på siden her. Den ligger i samme mappe son resten af billederne på siden, og kan derfor bare kaldes, det som den også hedder i mappen og så filtypen herefter.
+</p>
+<img src="billede.png">
+
+<h2>farvebrug</h2> 
+<p>
+Siden er lavet ud fra den analoge farveformel, hvor der bruges nærtstående og ligenende farver fra farvehjulet. 
+Ift. Selve koden er baggrundsfarven stiliseret i css-dokumentet tilknyttet disse to sider og ser sådan ud:
+</p>
+<img src="baggrundsfarve.png"> 
+<p>
+øverst i koden fortæller vi css dokumentet at det er hele "body" vi ønsker at ændre farve på.
+Herefter har jeg skrevet en kommentar til mig selv, om at denne kommando kontrollerer baggrundsfarven.
+Herefter kommer selve kommandoen, der er ansvarlig for baggrundsfarven, sammen med de 2 farvekoder der er hentet fra websiden "grabient" for at få den glidende overgang.
+
+Til sidst indikerer height kommandoen højden eller længden af farvetoningen og altså også af siden.
+</p>
+<h1>Topnavigationsbaren</h1>
+<p>
+Øverst på siden ses en navigationsbar, som er lavet ved følgende kode:
+</p>
+<img src="topbarweb.png">
+<img src="topbarindex.png">
+<p>
+kommandoen indledes med "div" som står for content division element og bruges ligesom til at indramme et layout eller design på hjemmesiden. Herefter defineres den kommende kommando vha. Class kommandoen som "topnav" og de forskellige elementer der skal indgå i topbaren skrives ind med et "a" først.
+</p>
+<p>
+de to ovenstående billeder er fra hvar sit html dokument. På det ene billede står der "class=active" ud fra wbteknologi og på den anden ud fra index. Det styrer den funktion der gør, at der i navigationsbaren vil være highlighted hvilken af siderne man er inde på.
+</p>
+<p>
+Kommandoen href="#" angiver hvilket html dokument der henvises til, når man trykker på feltet i topbaren. efter href="#" kommandoen kommer navnet på siden i topbaren. I øjeblikket er der kun henvist til 2 dokumenter, men i takt med at portfolien udvides, viderebygges topbaren også.
+</p>
+<h2> Styling af Topbar</h2>
+<p>Stylingen af Topbaren er skrevet i css ved følgende kode:</p>
+<img src="Topbar.png">
+
+<p> 
+Øverst er skrevet en kommentar om at følgende afsnit omhandler topbaren.
+herefter angives det med ".topnav", at det er topnavigationsbareen vi ønsker at style.
+Herefter skrives "overflow:auto;" hvilket styrer indholdet i boksen og gør så det ikke bryder uden for dets grænser. "auto"-værdien sikrer, at når indholdet fortsætter uden for dens boks, hvis det fx bliver vist på en telefon og skal omstruktureres, så kommer der en scrollbar så indholdet ligesom bliver indenfor for dets grænser.
+Herefter defineres baggrundsfarven med kommandoen "background-color"
+</p>    
+
+<p>
+Nedenunder fortæller vi css-dokumentet hvordan det skal designe de individuelle bokse i topbaren, nemlig ".topnav a"
+"float: left;" fortæller de skal ligge fra venstre side af.
+"display:block; fortæller at de skal vises som firkantede blokke med skillevægge imellem dem. "color" angiver farven på boksene.
+"text-decoration: none;" fortæller at der ikke skal være nogen særlig ellere ekstra tekst dekoration.
+"padding" angiver ligesom hvor stort rummet omkring boksene skal være i antal pixels. Hvis man satte padding til 50, ville topbaren blive kæmpestor.
+</p>
+    
+<p> 
+Til sidst har vi hovrfunktionen som gør at felterne i navigationsbaren lyser op når man trækker musen henover.
+Den skrives som ".topnav a:hover,.topnav a.active", hvor den farve som den skal vise på det berørte felt, fortælles nedenunder med "background-color: farvekoden;"
+</p>
+
+</html>
