@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>It-sikkerhed</title>
+<title>Machine Learning</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta charset="UTF-8">
 </head>
@@ -18,10 +18,91 @@ Informatik c portfolio
         <a href="itsikkerhed.html"> It-sikkerhed </a>
         <a href="Astropi.html"> Astropi</a>
         <a href="Machine%20Learning.html" class="active"> Machine Learning</a>
+        <a href="SpilLegOgSamarbejde.html"> Spil Leg og Samarbejde</a>
         </div>
 
-<h2 id=overskrift2>
+<h2>
     Machine Learning
 </h2>
     
+<p> På denne side vil der være information om hvad der kort er gennemgået i forløbet om Machine Learning</p>    
     
+<h2>
+Turing-testen
+</h2>
+    
+ <p> Når man beskæftiger sig med kunstig intelligens er det både relevant og svært at have præcise definitioner på hvad det vil sige når nogen eller noget er kreativt, bevidst eller intilligent. Fordi hvornår er noget intelligent og hvad er intelligens egentlig? Det kan være svært at svare på hvornår en maskine udviser intelligens, men den engelske matematiker Alan Mathison Turing foreslog en test, der siden er blevet anerkendt som et redskab når man beskæftiger sig med kunstig intelligens. 
+    <br>
+Turing-testen er en måde til at afgøre, om en maskine udviser intelligens på et menneskeligt niveau, uden at man på samme tid er nødt til at definere, hvad menneskelig intelligens så reelt er for en størrelse.
+<br>
+</p>
+<div class="turingcont"> 
+    <img id="turing" src="Turing_test_diagram.png">
+    <p>
+        Testen går ud på, at et menneske på afstand kommunikerer med en chatbot, eller computer, og et menneske, og så skal kunne afgøre om det er et menneske eller en computer som vedkommende kommunikerer med. Hvis mennesket der chatter med computeren gætter på at computeren er et menneske, så har computeren ligesom bestået Turing-testen og det kan pege i retning af at denne udviser en form for menneskelig intelligens.
+    </p>
+</div> 
+
+
+<h2>
+    Neurale netværk
+</h2>
+<center><img src="neutral-network-diagram.svg"> </center>
+<p>
+Neurale netværk, kan som navnet antyder, forstås som et netværk eller sammenkobling af neuroner. Neuroner skal så forstås som en ting der holder på en talværdi. Hvis man forestiller sig et nuralt netværk designet til at genkende håndskrevne tal på et billede, kunne den første række, eller det der hedder “input layer”, være neuroner i netværket der holder en given farveværdi for billedet. Tallet som neuronen holder på kaldes for dets aktivering eller “Activation”. Man kan tænke at neuronen aktiveres eller tændes, når farveværdien er høj fx. Det sidste lag neuroner i netværket eller dem man kalder “output layer”, angiver en sandsynlighed for en given talværdi i vores tilfælde her. Lagene imellem kalder man for “hidden layer” og ved komplicerede neurale netværk kan man betragte dette mellemlag som en “black box beregning” hvor det kan være uklart præcis hvad der sker. Lidt ligesom når hjernen beslutter noget. Måden som et neuralt netværk fungerer på er ved at aktiveringerne i et lag, medvirker til nogle særlige aktiveringer i det næste lag osv. Igen lidt ligesom hjernens biologi, hvor aktiveringen af nogle neuroner foråsager aktivering af nogle bestemte nye neuroner. I vores tilfælde med håndskrevne tal på et billede, så aktiverer de bestemte farveværdier i det første lag, nogle nye neuroner i det næste lag osv. indtil det når det sidste lag, hvor det kun er en neuron, eller den neuron der har den højeste aktivering, der så er netværkets bud på hvilken talværdi der er skrevet på billedet.
+</p>
+    
+
+<p>
+Når vi kigger på tal, identificerer vi dem ved at kigge på nogle dele af det. Fx består et 9-tal af en cirkel og en streg og et 8-tal af to cirkler. Man kan tænke at neuronerne i mellemlagene gør noglelunde det samme. Fx kunne man tænke at det, at der er identificeret en cirkel aktiverer nogle neuroner, og hvis der så også er identificeret en streg og en anden neuron så aktiveres, så kunne netværket foreslå at det fx kunne være et 9-tal. Hvordan at netværket så identificerer de mindre delstrukturer kunne så være ved igen at bryde delstrukturerne ned i endnu mindre delstrukturer, som vist på billedet under.
+</p>
+    
+<center><img src="neuroner.png"> </center>
+    
+<p>
+Når netværket finder disse delstrukturer kan det gøres ved at tilskrive en “vægt” til hver forbindelse fra neuron fra input layer til neuron fra næste lag. Vægten skal her forstås som et tal, som den talværdi neuronen fra input layer bliver ganget med. Det kan være nyttigt når man skal afgrænse områder på billedet hvor der kan være delstrukturer. Herefter kan man så tilføje en “bias” eller partiskhed, der gør at neuronen i andet lag kun aktiveres når dens vægtede område er over en særlig værdi. Man indfører altså en “bias” for kun at lade neuronerne aktiveres når det ligner en delstruktur.
+</p>
+
+    
+<p>
+Når netværket så “lærer” så finder det i virkelighden bare de vægte og partiskheder, der finder frem til de rigtige udfald. Først snakkede vi om at man kan betragte en neuron som noget der bare holder et tal, men i virkeligheden er det måske mere præcist at betragte den som en funktion, der får nogle værdier fra andre neuroner, eller fra inputs fra virkeligheden og så selv tager en ny værdi. 
+</p>
+    
+<p>
+Forståelsen af neurale netværk som forklaret her, kommer fra 3Blue1Brown. Videoen er tilgængelig ved at klikke på knappen under.
+</p>
+<center><a class="knap" href="https://www.youtube.com/watch?v=aircAruvnKk&t=143s"><button>Video om neurale netværk</button></a></center>     
+
+<h2>
+    Forskel fra almindelig programmering
+</h2>
+
+<p>
+Maschine learning er markant anderledes end almindelig computerprogrammering. Som vist ved de neurale netværk over er det programmets egen evne til at lære, der gør dem så anderledes og revolutionerende. Ved almindelig computerprogrammring eksisterer ideen om at computere er dumme og man derfor ligesom er nødt til at give meget præcise og klare instrukser efter et klart sæt regler.
+</p>
+    
+<p>
+Den almindelige computerprogrammering kan visualiseres ved faren der får sine børn til meget præcist at instruere ham i at smørre en sandwich, hvor AI kan illustreres ved googles åbne AI der kan lære at kende forskel på sten, saks og papir.
+</p>
+    
+<h2>
+    fordele og ulemper
+</h2>
+
+<p>
+Ved kunstig intelligens, machine learning og neurale netværk kan der rejses en række etiske spørgsmål. Hvornår er brugen af det godt? Hvordan bruges teknologierne bedst muligt i fællesskabets interesse? Er der tidspunkter hvor det er uetisk at bruge teknologierne og er der tidspunkter hvor det er uetisk at lade være?
+
+<br>
+<br>
+
+På den ene side er der mange positive muligheder forbundet med brugen af kunstig intelligens. Det kan bruges til 
+effektivisering, energioptimering, resscourceoptimering, krisehåndtering,  mindske dødsfald i trafikken og hjælpe læger og lokaliserer epidemier hurtigere. 
+<br>
+På den anden side kan det være medvirkende til at skabe et nyt neo-proletariat hvor, at menneskers intelligente kognitive arbejde bliver overflådigt og der opstår masse ledighed. Hvem skal så eje algoritmerne og høste den økonomiske gevinst ved deres arbejde? 
+<br>
+Ligeledes kan kunstig intelligens i krig måske komme til at krænke nogle af vores forståelser af retfærdig krigsførelse.
+</p>
+    
+</body>
+        
+</html>

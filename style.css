@@ -14,6 +14,27 @@ text-decoration: none;
 font-size: 15px;
 }
 
+.makycont{
+width: 100vw;
+display: flex;
+justify-content: center;
+}
+
+.turingcont {
+display: flex;
+width: 80vw;
+justify-content: center;
+gap:20px;
+}
+
+#turing{
+    width: 25%;
+}
+
+#makymaky{
+width: 50%;
+}
+
 h1
 { 
 color:ghostwhite;
@@ -82,7 +103,7 @@ text-align: center;
 
 .column.side
 {
-width:50%;
+width:70%;
 }
 
 #binaerboksen
@@ -91,7 +112,7 @@ background: lightblue;
 border-radius: 20px;
 padding: 30px;
 margin-bottom: 20px;
-margin-left: 900px;
+margin-left: 850px;
 transform: translateY(-350px)
 }
 
@@ -99,6 +120,5 @@ transform: translateY(-350px)
     width: 80%;
 }
 
-#Flowchart{
-    align-content: center;
-}
+
+
