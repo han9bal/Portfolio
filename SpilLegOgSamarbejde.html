@@ -18,7 +18,9 @@ Informatik c portfolio
         <a href="itsikkerhed.html"> It-sikkerhed </a>
         <a href="Astropi.html"> Astropi</a>
         <a href="Machine%20Learning.html"> Machine Learning</a>
-        <a href="SpilLegOgSamarbejde.html" > Spil Leg og Samarbejde</a>
+        <a href="SpilLegOgSamarbejde.html" class="active"> Spil Leg og Samarbejde</a>
+        <a href="Databaser.html" > Databaser</a>
+        <a href="quiz.html" > Databaseprojekt</a>
         </div>
 
 <h2 id=overskrift2>
@@ -38,7 +40,7 @@ Informatik c portfolio
 </h2>
 
 <div class="column side"> 
-<p> Motivationen til projektet kommer fra en undersøgelse af Dansk idrætsforbund, der er stærkt bekymret over at 3 ud af 4 børn og unge bevæger sig for lidt i hverdagen. De mistænker at for meget stillesiddende skærmtid spiller en rolle og vil derfor gerne motivere unge mennesker til at bevæge sig mere og til at være mere sociale, når de spiller computerspil. Kravene eller rammerne for projektet er beskrevet under. <br>
+<p> Motivationen til projektet kommer fra en undersøgelse af Dansk idrætsforbund, der er stærkt bekymret over at 3 ud af 4 børn og unge bevæger sig for lidt i hverdagen. De mistænker at for meget stillesiddende skærmtid spiller en rolle i unges mistrivsel og vil derfor gerne motivere unge mennesker til at bevæge sig mere og til at være mere sociale, når de spiller computerspil. Kravene eller rammerne for projektet er beskrevet under. <br>
 <br>
 </p>
 </div>    
@@ -49,28 +51,160 @@ Informatik c portfolio
 
 <p> For at leve op til kriterierne besluttede vi os for at lave en form for blanding mellem Clash Royale, fægtning og Mortal Combat. fægtningselementet skulle sørge for et aktivt element, da man er nødt til at være opmærksom, oppe på tæerne og bevæge sig hurtigt, mens inspirationen fra spillene skulle sørge for at bibeholde det underholdende element. Vi tænkte fra start, at man skulle have en brystplade og et sværd, der var koblet op til en Makey Makey så spillet ikke blev styret fra computeren. Den grundtanke har vi holdt ved projektet igennem.<br><br>
 
-Vores første flowchart så således ud.
-<center><img src="flowchart1.jpg"> </center>
     </p>
 <h2>
-    Færdig Flowchart
+Flowchart
 </h2>
-    
+
+<p>
+    Vores første flowchart så således ud. Den gav os ligesom en retning eller grundskabelon for hvordan spillet skulle virke. Den kan stadig betragtes som skabelon for spillet, men kun for skadedynamikken da vi tiljøjede flere elementer til spillet efterfølgende. Fx sudden death, det at den med mest liv vinder når timeren er færdig osv.
+    <center><img src="flowchart1.jpg"> </center>
+<br>
+</p>
+<p>
+    Efterfølgende ufviklede vi en udvidet version af flowcharten der også indeholdt vores suddendeath element og dermed også timerens funktion. Flowcharten er ikke helt som det færdige spil rent faktisk fungerer, men dynamikken er noglelunde den samme.
+</p>
+<center><img src="udvidetflowchart.jpg"> </center>
 <h2>
     beskrivelse af kodestumper
 </h2>
     
+<p>
+I dette afsnit vil der være en kort beskrivelse af forskllige centrale elementer af koden fra spillet
+</p>
+
+<center><img src="skade.png" style="width: 50%;"> </center>
+<center><img src="delafkey.png" style="width: 50%;"> </center>
+<p> Det ovenstående kodestykke bruges til at køre "skadedynamikken" når sværdet rammer en modstanders rustning</p>
+<p>
+
+kodestykket indledes med funktionen "keyPressed()", som så gentages hver gang en tast trykkes. 
+Hvilken bestemt tast der så skal sætte noget bestemt igang defineres længere nede med variablen "keyCode".
+<br>
+Under funktionen indledes en række "if-statements" eller "betingelser" der skal være gældende, hvis der skal ske noget bestemt.
+Det første if-statement definerer ligesom betingelserne for at slaget kan gå igennem. 
+Hvis værdien af "hp1" og "hp2" eller spiller 1 og 2's liv er over nul samtidig med at countdown værdien også er over nul og at cooldownen er under 10, så kan de næste statements gå igennem.
+<br>
+Herefter indledes et nyt if-statement der er gældende under det førnævnte. 
+Først bestemmes KeyCode variablen til højre piletast og kan læses som: "hvis højrepiletast trykkes så skal det her ske".
+Herefter beskrives hvad der så skal ske når højrepiletast trykkes. "hp1" bliver minusset med 0.5. Spiller 1 mister altså liv. 
+<br>
+Så indsættes volumen af den "hitsound", som vi selv har indtalt, til 0.5, hvorefter den afspilles med "hitsound.play()".
+Til sidst fremkaldes funktionen "DoSchedueleThings()" som gør en række ting bla. at afspille "newround"-lyden på sammme måde som "hitsound"-lyden.
+<br>
+Funktionen står også for cooldownen. Cooldownen sættes først til halvtreds, hvilket er højere end 10 og gør så "if-statementet" der stod for at tage skade ikke kan udføres.
+Derefter "slukker" eller "sover" funktionen i 3 sekunder med kommandoen "sleep(3000).then(function()". Sleep tiden har vi angivet i millisekunder.
+<br>
+Efter de 3 sekunder sættes cooldownen igen til 0 med kommandoen "cooldown=0", hvorefter det nu er muligt at skade hinanden i spillet igen da "if-statementet" kan foreløbe.
+<br>
+Efter at  "DoSchedueleThings()" funktionen er fremkaldt i vores "if-statement", indledes et "else if-statement" der ligesom sætter en betingelse for et andet udfald, hvis det første ikke er sandt. betingelsen gør præcis det samme som det ovenover udover at det aktiveres af betingelsen af at venstrepiletast trykkes og at det nu er spiller 2 der mister liv.
+
+</p>
+
+<center><img src="preload.png" style="width: 50%;"> </center>
+
+<p>
+Det ovenstående stykke kode bruges til at hente nogle eksterne filer ind, inden spillet begynder og til at sætte startværdierne for de to spilleres liv.
+
+</p>
+
+<p>
+"preload()" funktionen bruges til at hente eksterne filer der ellers kan blokere eller gøre resten af koden langsommere.
+Når en preload funktion indgår i koden vil den altid køre inden "setup()" funktionen og setup() vil først køre når processen i preload er 100% færdig.
+Det er smart at hente billeder og lydfiler ind under en preload funktion, da de ellers kan komme "ufærdige" ind i spillet, hvilket kan mindske spillets kvalitet. 
+<br>
+<br>
+Først under funktionen sættes hp1 og hp2 til 10. Det angiver de 2 spilleres liv.
+Herefter sættes baggrunden til et billede fra streetfighterspillet med kommandoen "background=LoadImage('Streetfigther Background.png')"
+"LoadImage" henter et billede ind og konverterer det til et p5.image der kan blive vist i p5js editoren.
+<br>
+<br>
+Herefter sættes suddendeath lig et andet billede som vises senere på samme vis i den del af koden der kører når der kommer suddendeath.
+til sidst sættes baggrundmusikken lig en downloadet lydfil som hentes med "LoadSound" kommandoen.
+</p>
+
+<center><img src="draw.png" style="width: 50%;"> </center>
+
+<p>
+Ovenstående kode beskriver hvordan elementerne på startskærmen tegnes og dynamikken med at de langsomt bliver mindre som man mister liv. 
+Koden beskriver også hvordan "countdown" er defineret. 
+</p>
+
+<p>
+Øverst efter draw funktionen, sættes nogle forskellige variable til nogle bestemte sætninger med kommandoen "let".
+Når disse bliver fremkaldt med en "text()" kommando vises de i spillet.
+<br>
+<br>
+Efter de variable kommer en "image" kommando der fremkalder baggrundsbilledet. Den første parameter beskriver hvilket billede der skal vises og de sidste 2 beskriver x og y værdierne for billedet som så er sat til 400 så det dækker hele skærmen.
+Herefter følger en "fill()" kommando, der bestemmer farven for efterfølgende figurer eller text. Den sættes ud fra RGB farvekoden hvor 0,0,0 altså er sort og 255,255,255 er hvid.
+"fill(0,0,0)" siger altså her at de næste to tekststykker skal være sorte.
+<br>
+<br>
+Herefter indtegnes to tekststykker. Den første parameter i kommandoen "text()" beskriver hvad der skal skrives og de efterfølgende parametre beskriver positionen af det der skrives.
+Den første "text()" kommando skriver altså "Spiller 1" da p1 holder på denne værdi og den næste skriver "spiller 2".
+Herefter sættes farven til hvid for de næste to elementer der tegnes med kommandoen "rect()", som tegner et rektangel.
+<br>
+<br>
+De første to parametre i "rect()" sætter rektanglets lokation fra det øverste venstre hjørne og de sidste to sætter højden og bredden.
+Efter de to rektangler sættes en ny farvekode for et nyt rektangel med "fill()" funktionen. Farvekoden er her koblet op på variablen "hp1" således at farven bliver mere lysegrøn når hp1 falder.
+Herefter tegnes rektanglet med den givne farvekode med funktionen "rect()". Det ses at den tredjeparameter, altså rektanglets bredde ganges med h1, således at rektanglet bliver mindre når spiller 1's liv bliver mindre. Det giver en god illustration af hvor meget liv man har tilbage(den grønne rekangel) ud af hvor meget liv man havde til at starte med(den hvide rektangel)
+Samme opstilling med "fill" og "rect" er så opstillet bare med spiller 2 efter.
+<br>
+<br>
+Herefter sættes variablen "currentTime" lig med "int(millis()/1000);". "int()" kommandoen konverterer en streng, en brøk, et decimaltal eller hvad der nu måtte stå i den, til et naturligt tal der kan repræsentere værdien af det der står inde i "int()".
+I vores tilfælde er det kommandoen "millis()" divideret med 1000 der bliver konverteret til heltal. "millils()" tæller tiden i millisekunder efter "setup()" stykket er kørt og altså når spillet starter.
+"currentTime" fortæller altså hvor lang tid siden det er at spillet startede.
+<br>
+<br>
+Til sidst sættes variablen "countDown" lig med "timeLimit" minus "currentTime". Tidsgrænsen defineres som variablen øverst i koden og står på 90 som spillet er nu.
+Dette gør altså at "countDown" angiver hvor lang tid der er tilbage af spillet, da "currentTime" fortæller hvor lang tid der er gået og "timeLimit" angiver et tal på hvor lang tid spillet maximalt må tage.
+<br>
+Effekten af kodestykket kan ses på nedenstående billede hvor rektanglerne og teksten er tegnet og tiden er i gang.
+</p>
+
+<center><img src="spilbillede.png" style="width: 50%;"> </center>
+
+<br>
+
+<center><img src="suddendeath.png" style="width: 50%;"> </center>
+
+<p>
+    Ovenstående kode beskriver Suddendeath dynamikken i spillet.
+</p>
+<p>
+Første linje er en betingelse eller "if-sætning", der udføres, hvis både hp1 og hp2 har den samme værdi og "countDown" er mindre end eller lig med 0.
+
+"if(hp1==hp2 & countDown <=0)" Starter betingelsen og tjekker om betingelsen er sand.
+
+Hvis betingelsen er sand, sættes countDown til 0.
+
+textSize(32) angiver så størrelsen på teksten, der vises på skærmen.
+<br>
+image(Suddendeath,169,40,60,60) tegner eller fremkalder så et billede på skærmen. Billedet, der vises, er gemt i en variabel ved navn Suddendeath. De fire tal, der er angivet efter billednavnet, definerer positionen og størrelsen af billedet.
+<br>
+fill(255,0,0) bestemmer så farven på teksten, der vises på skærmen. ¨parametrene i parantesen er angivet efter RGB farvekoden og er i dette tilfælde rød.
+<br>
+Text("Sudden Death!",width/2-115,100,400,200); viser teksten "Sudden Death!". De fire tal, der er angivet efter teksten, definerer positionen og størrelsen af teksten på skærmen, som så er lige lidt over midten.
+<br>
+til sidst  ændrer de to linjer værdien af enten hp1 eller hp2 afhængigt af hvilken piletast, der blev trykket på. Hvis højrepilen er blevet trykket på, sættes hp1 til 0. Hvis venstrepilen er blevet trykket på, sættes hp2 til 0.
+if(keyCode=== RIGHT_ARROW){hp1=0}
+if(keyCode=== LEFT_ARROW){hp2=0}
+<br>
+Kodestykket er med til at tilføje et ekstra element af spænding til spillet og kan medvirke til at man lige giver en ekstra indsats til sidst og får lidt mere motion ud af spillet. Kodestykket imødekommer også problemstillingen med hvad der skulle ske hvis tiden stopper og ingen af spillerne har ramt hinanden eller hvis de har samme liv.
+</p>
+
+<center><img src="suddendeathbillede.png" style="width: 50%;"> </center>
 <h2>
     billede af setup
 </h2>
     
-<center><img src="gruppebillede.jpg"> </center>
+<center><img src="gruppebillede.jpg" style="width: 50%;"> </center>
     
 <h2>
     Feedbackovervejelser på baggrund af brugertest.
 </h2>
 
-<p> Ud fra vores spørgeskema kan vi sige at folk generelt for pulsen op, hvilket er godt og i overensstemmelse med vores mål med spillet.<br> 4 ud af 6 synes at lydeffekterne bidraget synes at spillet blev sjovere, men vi fik feedback på at lyden og lydeffekterne godt kunne være højere. <br>Alle deltagerne synes at spillet burde kommercialiseres, hvilket jo indikerer, at det var en succes, som vi vil gå videre med. Ift. udstyret kunne det godt sidde bedre på, og sværdene kunne godt være mindre slatne. Særligt de mange ledninger blev også et problem, men i den endelige udgave af spillet kunne man måske lave det trådløst. <br> Der kom nogle gode forbedringsforslag i form af at man kunne implementere flere sensorer så man bevægede sig på flere forskellige måder og måske fik rørt sig mere.<br> Den gennemsnitlige vurdering af spillet fra en skala på 1-10 var 8, hvilket er udtryk for en generel tilfredshed.</p>
+<p> Ud fra vores spørgeskema kan vi sige at folk generelt får pulsen op, hvilket er godt og i overensstemmelse med vores mål med spillet.<br> 4 ud af 6 synes at lydeffekterne bidragede og at spillet blev sjovere med lyden. Vi fik dog også konstruktiv feedback på at lyden og lydeffekterne godt kunne være højere. <br>Alle deltagerne synes at spillet burde kommercialiseres, hvilket jo indikerer, at det var en succes, som vi vil gå videre med. Ift. udstyret kunne det godt sidde bedre på, og sværdene kunne godt være mindre slatne. Særligt de mange ledninger blev også et problem, men i den endelige udgave af spillet kunne man måske lave det trådløst. <br> Der kom nogle gode forbedringsforslag i form af at man kunne implementere flere sensorer så man bevægede sig på flere forskellige måder og måske fik rørt sig mere.<br> Den gennemsnitlige vurdering af spillet fra en skala på 1-10 var 8, hvilket er udtryk for en generel tilfredshed.</p>
     
 <p> Udstyret er klart 1. prioritet ift. forbedring. Udstyret kunne være lavet ud af mere stabile materialer og ledningsproblemet kunne imødekommes med et trådløst setup.<br>
 Dog var varigheden af spillet en succes, da man ikke blev helt træt, men alligevel fik pusten op.</p>

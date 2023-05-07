@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Databaser</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+</head>
+
+<body>
+    
+<h1>
+Informatik c portfolio
+</h1>
+        
+        <div class="topnav">
+        <a href="index.html"> Portfolio </a>
+        <a href="webteknologi.html"> Webteknologi </a>
+        <a href="itsikkerhed.html"> It-sikkerhed </a>
+        <a href="Astropi.html"> Astropi</a>
+        <a href="Machine%20Learning.html"> Machine Learning</a>
+        <a href="SpilLegOgSamarbejde.html" > Spil Leg og Samarbejde</a>
+        <a href="Databaser.html"  class="active"> Databaser</a>
+        <a href="quiz.html" > Databaseprojekt</a>
+
+        </div>
+
+<h2 id=overskrift2>
+    Databaser
+</h2>
+
+<p>
+    En database er et værktøj til at indsamle og organisere oplysninger. Databaser kan lagre oplysninger om personer, produkter, ordrer eller andet. På denne side vil der gennemgås hvad vi har arbejdet med i forløbet om databaser.
+</p>
+
+<center><img src="databillede.webp" style="width: 50%;"></center>
+
+<h2 id=overskrift2>
+    Trelagsarkitektur
+</h2>
+
+<p>
+Ideen med en trelagsarkitektur er at de tre lag så vidt muligt holdes adskilte og dermed gør hele programmet lettere at overskue og ændre i.
+<br>
+<br>
+Præsentationslag: Det øverste lag der håndterer modtagelse og præsentation af data. Dette lag er kendetegnet ved at være ”tæt” på brugeren af programmet. Præsentationslaget er primært designet med HTML og CSS.
+<br>
+<br>
+Logiklag: Det midterste lag der håndterer udvekslingen af data mellem præsentationslaget og datalaget. Logiklaget designes typisk med Javascript og kører også på computeren. Eller det vil sige at javascript-koden kan være skrevet i samme dokument som HTML-koden, der er tæt på brugeren.
+<br>
+<br>
+Datalag: Det nederste lag der opbevarer og håndterer data. Dette lag er også kendetegnet ved at være ”tæt” på computeren. Der bruges SQL, som vi også kort har arbejdet med, til at navigere i datalaget.
+<br>
+<br>
+</p>
+
+
+
+<h2 id=overskrift2>
+HTML - CSS - Javascript - SQL
+</h2>
+
+<p>
+    HTML, CSS, JavaScript og SQL-kode bruges til at designe interaktive hjemmesider, som kan hente data fra databaser. 
+
+<br>
+<br> 
+
+HTML (Hypertext Markup Language) bruges til at opbygge selve strukturen af hjemmeside. Dette gøres ved at definere og fastsætte de forskellige elementer på siden som overskrifter, afsnit, billeder, knapper og links. HTML-kode definerer også skabelonen, som brugeren kan udfylde og sende data til databasen eller hente fra databasen ved at trykke på knapper fx.
+<br> 
+<br> 
+CSS bruges til at "style" hjemmesiden. Det inkluderer layout, farver, skrifttyper, størrelse og altså i højere grad de visuelle aspekter ved en hjemmeside. CSS-kode bruges også til at vise hvordan dataene skal præsenteres på siden, efter at de er blevet hentet fra databasen.
+<br> 
+<br> 
+JavaScript bruges til at tilføje det interaktive aspekt til hjemmesiden. JavaScript bruges fx til at lave funnktioner der gør bestemte ting, når der klikkes på en knap lavet med HTML. I javascriptet kan der også opsættes if-statements og sættes variable som kan bruges til hjemmesidens kommunikation med databasen. JavaScript bruges også til eventuelt at vise forskellige ting fra databasen på elementer fra hjemmesiden der er fastsat med et "ID". Fx med kommandoen "document.getElementById"
+<br> 
+<br> 
+SQL koden bruges i datalaget og kan bruges til at læse, fremhæve og redigere i dataene. Det kan også bruges til at identificere primærnøgler i databaser man ikke er bekendt med osv. Vi har arbejdet med SQL, men ikke med vores egne databaser. Dem har vi bare holdt i excel. SQL bliver særligt brugbart jo større databsen bliver.
+
+</p>
+
+<h2 id=overskrift2>
+    centrale begreber
+    </h2>
+
+<p>
+Entiteter refererer til objekter, enheder eller personer, som der skal holdes styr på i databasen. For eksempel kan en kunde eller en ordre være en entitet i en database.
+<br>
+<br>
+Attributter er de særtræk eller egenskaber, der kendetegner og eksisterer ved en entitet. For eksempel kan attributterne for en kunde omfatte navn, adresse, mail, telefonnummer osv.
+<br>
+<br>
+Primærnøglen er en unik talværdi der identificerer hver række i en database. Primærnøglen er altid unik for hver række i tabellen. Primærnøglen er vigtig, da den bruges til at danne relationer og kendetegn mellem tabeller i en database.
+<br>
+<br>
+Sekundærnøgle (også kendt som fremmednøgle) er en attribut i en tabel, der henviser til primærnøglen i en anden tabel. Sekundærnøgler bruges til at oprette relationer mellem tabeller. En sekundærnøgle er ikke unik for hver række i tabellen, men dens værdier skal være de samme som primærnøgleværdierne i en anden tabel for at oprette en relation mellem rækkerne i de to tabeller.
+<br>
+<br>
+Entiteter, attributter, primærnøgler og sekundærnøgler er altså alle centrale begreber i databaseemnet. De bruges til at strukturere og organisere databaser og medvirker til at opnå en effektiv lagring og gnidningsfri hentning af data.
+</p>
+
+<h2 id=overskrift2>
+    Normalisering
+</h2>
+
+<p>
+Databaser kan hurtigt bliver uoverskuelige og indvinklede. Derfor er det vigtigt at opretholde et system og en struktur. Både for computerens, der skal læse dataene, og for menneskets, der skal have overblik, skyld.
+For at undgå invikledheder, gentagelser og andre komplikationer opererer man med nogle "normaliseringsregler".
+Man normaliserer for at gøre det lettere at tilføje nye dataelementer, rette i eksisterende data og for at undgå gentagelser.
+For normalisering er der fem centrale regler
+<br>
+<br>
+1. En primærnøgle SKAL være unik og må aldrig gentages
+<br>
+<br>
+2. Kolonner må KUN være afhængige af andrer kolonner med en primærnøgle.
+<br>
+<br>
+3. Hver kolonne må kun indeholde 1 datatype. - Man kan fx ikke skrive en persons tlf sammen med personens navn.
+<br>
+<br>
+4. Det samme data skal kun forekomme et sted. - Gentagelser er altså strengt forbudte.
+<br>
+<br>
+5. Alt data skal være relateret til hinanden.
+<br>
+<br>
+<br>
+
+Eksempel med normalisering
+
+På billedet under ses et eksempel på et normaliseringsproblem (til højre) og en løsning på normaliseringsproblemet (til venstre)
+</p>
+<center><img src="normalisering.png" style="width: 50%;"></center>
+<p>
+Tabellen ude til højre overskrider en række af normaliseringsreglerne. Der er gentagelser og der opstår problemer når den samme person ejer flere biler og at flere af de samme biler kan ejes af den samme person.
+<br>
+<br>
+Problemet løses derfor ved at først at oprette en tabel for entitetstypen kunder, som kaldes "kunde ID" med de tilhørende attributer (alle de ting der er unikke ved kunden og dermed følger kundeID'et Det er fx tlf, mail og navn.)
+<br>
+<br>
+Herefter, oprettes der en tabel for entitetstypen biler (Bil ID) og de tilhørende attributer(mærke og type). To biler kan godt være af samme mærke og være en forskellig bil, men ikke både af samme mærke og type, så er det den samme bil. Hver bil tilskrives en primærnøgle.
+<br>
+<br>
+Til sidst oprettes så en relationstabel der viser hvilke kunder der ejer hvilke biler og datasættet er normaliseret.
+</p>
+
+
+<h2 id=overskrift2>
+   E/R diagrammer
+</h2>
+
+<p>
+E/R diagrammer bruges til grafisk at illustrere hvordan og af hvad databaser er bygget op og hvilke "relationer" der indgår indbyrdes mellem de forskellige entiteter, attributer i databasen. Det giver et rigtig godt overblik over en database. Databasens forskellige indhold visualiseres også ved at gøre entiteterne rektanglede, relationerne diamantformede og attributerne ovale. Pile imellem dem illustrerer så hvordan de forbindes med hinanden. Pilene illustrerer typisk en ejerrelation og her taler man om 3 forskellige former.
+<br>
+<br>
+- 1-1
+<br>
+<br>
+- 1-m (mange)
+<br>
+<br>
+- m-m
+<br>
+<br>
+Man vil helst gerne undgå m-m relationer og med et E/R diagram kan vi illustrere hvordan vi kommer rundt om det problem med vores bil-eksempel.
+<center><img src="erdiagram.png" style="width: 50%;"></center>
+</p>
+<p>
+ Mange kunder kan eje mange biler, men fordi at vi har grupperet vores data med en relationstabel kan man nu læse ejerforholdet som: "1 kunde har mange ejerskab" og "1 bil er i manges ejerskab". På den måde løses m-m problemet, da relationerne nu er 1-m. Dette er altså et eksempel på hvordan E/R diagrammer er gode til at danne overblik i databasen og er også smarte at lave inden selve databasen så man kan lave hensigtsmæssige ejerskabsrelationer.
+</p>
+
+
+<h2 id=overskrift2>
+    Eget projekt med databaser og hjemmeside
+</h2>
+
+<p>
+
+Vi fik givet et projekt hvor vi skulle lave en hjemmeside der kunne interagerer med en database. 
+Hjemmesiden skulle indeholde nogle quiz eller flashcardsspørgsmål som var relevante for informatik c.
+der var følgende kriterier:
+<br>
+<br>
+- En html brugerflade hvor der er overvejt brugervenligheden.
+<br>
+<br>
+- Data skal organiseres i en simpel database, regneark, som kan importeres som csv fil med javascript.
+<br>
+<br>
+- Der skal redegøres for hvordan databasen kan normaliserese ved at gøre den til en relatinel database. Redegør herunder for relatinsgraden. Det er ikke nødvendigt at lave selv relationsdatabasen.
+</p>    
+
+<p>
+Projektet kan tilgås ved at trykke på "Databaseprojekt" i navigationsbaren.
+<br>
+<br>
+Brugervenligheden kommer i spil på forskellige måder på siden. For det første er alle vigtige elementer synlige på siden uden man behøver at scrolle. Spørgsmålet vises øverst ved at klikke på "Nyt spørgsmål" og svaret kommer frem under ved at klikke på "vis svar".
+Knapperne er stylet så musen bliver en pointer eller hånd når den er over knapperne ved CSS kommandoen "cursor:pointer;", så der antydes at man kan trykke på felterne.
+Siden er designet ud fra Steve Krug's princip "Don't make me think". 
+De vigtige elementer er store og der antydes, at de kan interageres med ved styling. Det gør siden intuitiv og brugervenlig og kommunikationen klar.
+<br>
+<br>
+Dog kunne man argumenterer for at det er lidt forstyrrende at billederne kommer med forskellig størrelse. Dette kunne man imødekomme ved at "style" dem så de havde samme absolutte højder og bredder i pixels, men det ville komprimere billederne på en underlig måde. Derfor har jeg valgt at gå med "width" til at style dem i det her tilfælde.
+</p>
+<p>
+Dataene er organiseret simpelt i et exceldokument med en enkel tabel.
+</p>
+<center><img src="excel.png" style="width: 80%;"></center>
+<p>
+Kolonnen der hedder "ID" fungerer som primærnøgle, hvor "SVAR" er en attribut. Datasættet er meget småt, men overholder normaliseringsreglerne; Alle primærnøgler er unikke, SPG og SVAR afhænger kun af primærnøglen, hver kolonne indeholder kun en datatype, der er ingen redundans og alt data er relateret til hinanden. 
+</p>
+
+<center><img src="kode til databaseprojekt.png" style="width: 50%;"></center>
+<p>
+På billedet over ses et uddrag af den javascript kode der er med til at interagere med databasen og hive elementer ind på siden.
+kodestykket indledes med "script" der fortæller browseren, at der nu kommer javascript kode. Herefter defineres en række variable med kommandoerne 
+"let" og "var". ""SPG" og "SVAR" sættes lig 0. Herefter indledes funktionen "ny()". Funktionen fremkaldes når der trykkes på "Nyt spørgsmål" knappen. Først i funktionen defineres variablen "pic".
+<br>
+<br>
+herefter sættes elementet med id'et "valg" til en tom streng eller med andre ord ingenting. Det vil fjerne al tekst eller indhold i dette element.
+Elementet med id'et valg er der hvor svaret bliver vist og derfor er det praktisk at fjerne svaret på det gamle spørgsmål når man klikker på knappen for at få et nyt spørgsmål.
+<br>
+<br>
+kommandoen document.getElementById() henter et bestemt element på siden med et bestemt ID. I vores tilfælde "valg".
+Resten af kommandoen (innerHTML) bestemmer så hvad det hentede element skal sættes til. I vores tilfælde ingenting.
+<br>
+<br>
+Næste linje kode genererer et tilfældigt heltal mellem 1 og 4 og gemmer det i variablen x.
+<br>
+"Math.random()" funktionen genererer et tilfældigt decimaltal mellem 0 og 1. Dette tal bliver så ganget med 4 og giver et decimaltal mellem 0 og 4. "Math.random()" kan kun producere tal der er mindre end 1 og større eller lig med 0.
+<br>
+Math.floor()-funktionen, som math.random er inde i, runder decimaltallet ned til det nærmeste heltal, så hvis decimaltallet er f.eks. 2.9, så bliver det heltallet 2.
+<br>
+Der bliver også plusset med en 1, således at variablen x ender med et tilfældigt heltal mellem 1 og 4 og ikke mellem 0 og 3.
+<br>
+<br>
+Herefter fremkaldes funktionen "genererTekst()" der ligesom vha. en Løkke tjekker om der er et match med ID-nøglen, i hvert objekt med en værdi af x. Hvis der er et match sættes elemterne med ID'erne "SVAR" og "SPG" til det der står i datasættet for dem.
+<br>
+<br>
+Efterfølgende sættes variablen "pic" lig med "billeder/spørgsmål"+x+".png". Det første stykke (billeder/spørgsmål) er en sti til en mappe der indeholder billeder til de forskellige spørgsmål. Navnet på billederne slutter så på en heltalsværdi mellem 1 og 4, hvor 1 og 4 er inkluderet. Da talværdien er x, matcher billederne med de spørgsmål der bliver hevet frem af "genererTekst()". "+x+" angiver dermed det tal som det givne billedenavn slutter på og .png" angiver filtypen som billederne er.
+<br>
+<br>
+De sidste to linjer kode (document.getElementById('SPG').innerHTML = SPG; og
+document.getElementById('myImage').src = pic;) sætter så de elementer med ID'erne "SPG" og "myImage" til et nyt fundet element fra databasen i "SPG"'s tilfælde og fra billedemappen i "myImage"'s tilfælde.
+</p>
+
+
+</body>
+        
+</html>

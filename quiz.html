@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+<body>
+<center><h1> Informatikquizzen</h1></center> 
+<center><a type="button" class="knap" href="index.html"> Tilbage til hovedsiden </a></center>
+<h2>Tryk for at teste dig selv</h2>
+<p id="SPG"></p>
+<button type="button" class="knap" onclick="ny()">Nyt spørgsmål</button>
+<button type="button" class="knap" onclick="valgte()">Vis svar</button>
+<p></p>
+<p id="SVAR"></p>
+<p id="valg"></p>
+<img id="myImage" src="Coding-quiz-questions-2.png" style="width: 40%;">
+
+</body>
+</html>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:600");
+*
+{
+font-family: "Poppins";
+font-size: 2;
+letter-spacing: 1px;
+box-sizing: border-box;
+}
+
+.knap {
+border-radius: 30px;
+background: #ffffff;
+color:rgb(0, 0, 0);
+font-size: 20px;
+padding: 8px 30px;
+text-decoration:none;
+text-align: center;
+}
+  .knap:hover {
+  background-color: #000;
+  color: #fff;
+  transition: 1.5s;
+  cursor: pointer;
+}
+</style>
+
+<script>
+    let x;
+    let Oskarfil;
+    let data;
+    var SPG = null
+    var SVAR = null
+  
+  function ny() {
+    var pic;
+    document.getElementById('valg').innerHTML = "";
+    x = Math.floor(Math.random()*4+1);
+    genererTekst(x);
+    pic = "billeder/spørgsmål"+x+".png"  
+    document.getElementById('SPG').innerHTML = SPG;
+    document.getElementById('myImage').src = pic;
+  }
+
+// læg billeder ind for skift  
+  
+  function valgte(){
+    console.log(x);
+    console.log(Oskarfil);
+    document.getElementById('valg').innerHTML = SVAR;
+  }
+  
+  function genererTekst(x){
+    for (var i = 0; i < data.length; i++) {
+        if (data[i]["ID"] == x) {
+          SPG = data[i]['SPG']; 
+          SVAR = data[i]['SVAR'];
+          break; // exit efter loop
+        }
+      }
+  }
+  window.onload = function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "Oskarfil.csv", true);
+  xhr.responseType = "text";
+  xhr.onload = function() {
+    data = Papa.parse(xhr.responseText, {
+      header: true // set this to true if the first row contains the header names
+    }).data;
+  };
+  xhr.send();
+  }
+  </script>

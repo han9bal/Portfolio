@@ -1,0 +1,6 @@
+﻿ID;SPG;SVAR
+1;Hvad bruges ID til;ID kan bruges til at identificere et element og eventuelt style det.
+2;"hvad er et "if-statement";En betingelse der gør noget bestemt, hvis den er sand
+3;hvilke lag indgår i trelagsarkitektur;præsentationslag, logiklag og datalag
+4;hvad er en primærnøgle;En primær nøgle er et felt eller en række felter med værdier der er unikke gennem hele tabellen. De forbinder sig til et specifikt stykke data
+5;hvorfor er det godt at have et css fil for flere html filer ;Fordi så behøver du ikke at skrive styling igen (sparer meget tid)

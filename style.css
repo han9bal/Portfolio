@@ -68,10 +68,10 @@ z-index: 19;
 .topnav a 
 {
 float: left;
-display: block;
+display:block;
 color: aliceblue;
 text-decoration: none;
-Padding: 15px;
+Padding: 14px;
 position:sticky;
 top:0;
 transition-duration: 1s;
@@ -91,13 +91,12 @@ font-size:45px; font-family: monospace;
 
 .knap
 {
-text-transform: uppercase;  
 border-radius: 40px;
 background: #fff;
-color:black;
+color:rgb(0, 0, 0);
 font-size: 20px;
 padding: 8px 30px;
-text-decoration: none;
+text-decoration:none;
 text-align: center;
 }
 
